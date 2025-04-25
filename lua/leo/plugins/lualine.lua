@@ -5,59 +5,56 @@ return {
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
-    
-local colors = {
-  nord0  = "#2E3440", -- bg dark
-  nord1  = "#3B4252", -- bg
-  nord2  = "#434C5E", -- bg lighter
-  nord3  = "#4C566A", -- fg dark
-  nord4  = "#D8DEE9", -- fg
-  nord5  = "#E5E9F0", -- fg lighter
-  nord6  = "#ECEFF4", -- fg lightest
-  nord7  = "#8FBCBB", -- cyan
-  nord8  = "#88C0D0", -- blue
-  nord9  = "#81A1C1", -- blue dark
-  nord10 = "#5E81AC", -- blue darker
-  nord11 = "#BF616A", -- red
-  nord12 = "#D08770", -- orange
-  nord13 = "#EBCB8B", -- yellow
-  nord14 = "#A3BE8C", -- green
-  nord15 = "#B48EAD", -- purple
-}
+    local colors = {
+      background = "#222222", -- fundo escuro
+      black = "#282828", -- preto
+      darkgray = "#3a3a3a", -- cinza escuro
+      gray = "#767676", -- cinza
+      lightgray = "#b2b2b2", -- cinza claro
+      white = "#dadada", -- branco
+      red = "#af5f5f", -- vermelho
+      orange = "#d78787", -- laranja
+      yellow = "#d7d7af", -- amarelo
+      green = "#87af87", -- verde
+      cyan = "#87afaf", -- ciano
+      blue = "#87afd7", -- azul
+      purple = "#afafd7", -- roxo
+      pink = "#d7afd7", -- rosa
+    }
 
+    local my_lualine_theme = {
+      normal = {
+        a = { bg = colors.blue, fg = colors.background, gui = "bold" },
+        b = { bg = colors.darkgray, fg = colors.white },
+        c = { bg = colors.black, fg = colors.lightgray },
+      },
+      insert = {
+        a = { bg = colors.green, fg = colors.background, gui = "bold" },
+        b = { bg = colors.darkgray, fg = colors.white },
+        c = { bg = colors.black, fg = colors.lightgray },
+      },
+      visual = {
+        a = { bg = colors.purple, fg = colors.background, gui = "bold" },
+        b = { bg = colors.darkgray, fg = colors.white },
+        c = { bg = colors.black, fg = colors.lightgray },
+      },
+      command = {
+        a = { bg = colors.yellow, fg = colors.background, gui = "bold" },
+        b = { bg = colors.darkgray, fg = colors.white },
+        c = { bg = colors.black, fg = colors.lightgray },
+      },
+      replace = {
+        a = { bg = colors.red, fg = colors.background, gui = "bold" },
+        b = { bg = colors.darkgray, fg = colors.white },
+        c = { bg = colors.black, fg = colors.lightgray },
+      },
+      inactive = {
+        a = { bg = colors.black, fg = colors.gray, gui = "bold" },
+        b = { bg = colors.black, fg = colors.gray },
+        c = { bg = colors.black, fg = colors.gray },
+      },
+    }
 
-local my_lualine_theme = {
-  normal = {
-    a = { bg = colors.nord8, fg = colors.nord0, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord5 },
-    c = { bg = colors.nord1, fg = colors.nord4 },
-  },
-  insert = {
-    a = { bg = colors.nord14, fg = colors.nord0, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord5 },
-    c = { bg = colors.nord1, fg = colors.nord4 },
-  },
-  visual = {
-    a = { bg = colors.nord15, fg = colors.nord0, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord5 },
-    c = { bg = colors.nord1, fg = colors.nord4 },
-  },
-  command = {
-    a = { bg = colors.nord13, fg = colors.nord0, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord5 },
-    c = { bg = colors.nord1, fg = colors.nord4 },
-  },
-  replace = {
-    a = { bg = colors.nord11, fg = colors.nord0, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord5 },
-    c = { bg = colors.nord1, fg = colors.nord4 },
-  },
-  inactive = {
-    a = { bg = colors.nord1, fg = colors.nord3, gui = "bold" },
-    b = { bg = colors.nord1, fg = colors.nord3 },
-    c = { bg = colors.nord1, fg = colors.nord3 },
-  },
-}
     -- configure lualine with modified theme
     lualine.setup({
       options = {
@@ -68,7 +65,7 @@ local my_lualine_theme = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
-            color = { fg = "#ff9e64" },
+            color = { fg = colors.orange },
           },
           { "encoding" },
           { "fileformat" },

@@ -1,11 +1,10 @@
 return {
   {
-    "fcancelinha/nordern.nvim",
-    name = "nordern",
+    "xero/miasma.nvim",
+    name = "miasma",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("nordern")
+      vim.cmd.colorscheme("miasma")
     end,
   },
 }
-

@@ -40,14 +40,3 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
-
-vim.cmd [[highlight EndOfBuffer guibg=NONE guifg=NONE]]
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("highlight EndOfBuffer guifg=bg")
-    vim.cmd("highlight NvimTreeEndOfBuffer guifg=bg")
-  end,
-})
-
