@@ -6,20 +6,20 @@ return {
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
     local colors = {
-      background = "#222222", -- fundo escuro
-      black = "#282828", -- preto
-      darkgray = "#3a3a3a", -- cinza escuro
-      gray = "#767676", -- cinza
-      lightgray = "#b2b2b2", -- cinza claro
-      white = "#dadada", -- branco
-      red = "#af5f5f", -- vermelho
-      orange = "#d78787", -- laranja
-      yellow = "#d7d7af", -- amarelo
-      green = "#87af87", -- verde
-      cyan = "#87afaf", -- ciano
-      blue = "#87afd7", -- azul
-      purple = "#afafd7", -- roxo
-      pink = "#d7afd7", -- rosa
+      background = "#282828", -- fundo escuro do gruvbox
+      black = "#3c3836",      -- preto do gruvbox
+      darkgray = "#504945",   -- cinza escuro do gruvbox
+      gray = "#665c54",       -- cinza do gruvbox
+      lightgray = "#bdae93",  -- cinza claro do gruvbox
+      white = "#ebdbb2",      -- branco/bege do gruvbox
+      red = "#fb4934",        -- vermelho do gruvbox
+      orange = "#fe8019",     -- laranja do gruvbox
+      yellow = "#fabd2f",     -- amarelo do gruvbox
+      green = "#b8bb26",      -- verde do gruvbox
+      cyan = "#8ec07c",       -- ciano/aqua do gruvbox
+      blue = "#83a598",       -- azul do gruvbox
+      purple = "#d3869b",     -- roxo/magenta do gruvbox
+      pink = "#d3869b",       -- rosa (mesmo que roxo no gruvbox)
     }
 
     local my_lualine_theme = {

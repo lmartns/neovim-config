@@ -1,10 +1,10 @@
 return {
   {
-    "xero/miasma.nvim",
-    name = "miasma",
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("miasma")
+      vim.o.background = "dark"
+      vim.cmd.colorscheme("gruvbox")
     end,
   },
 }
