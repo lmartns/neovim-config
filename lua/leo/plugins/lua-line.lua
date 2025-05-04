@@ -3,23 +3,23 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local lualine = require("lualine")
-    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+    local lazy_status = require("lazy.status")
 
     local colors = {
-      background = "#282828", -- fundo escuro do gruvbox
-      black = "#3c3836",      -- preto do gruvbox
-      darkgray = "#504945",   -- cinza escuro do gruvbox
-      gray = "#665c54",       -- cinza do gruvbox
-      lightgray = "#bdae93",  -- cinza claro do gruvbox
-      white = "#ebdbb2",      -- branco/bege do gruvbox
-      red = "#fb4934",        -- vermelho do gruvbox
-      orange = "#fe8019",     -- laranja do gruvbox
-      yellow = "#fabd2f",     -- amarelo do gruvbox
-      green = "#b8bb26",      -- verde do gruvbox
-      cyan = "#8ec07c",       -- ciano/aqua do gruvbox
-      blue = "#83a598",       -- azul do gruvbox
-      purple = "#d3869b",     -- roxo/magenta do gruvbox
-      pink = "#d3869b",       -- rosa (mesmo que roxo no gruvbox)
+      background = "#1e1e1e", -- fundo xcode-dark
+      black = "#232526",      -- preto xcode-dark
+      darkgray = "#2c2c2c",   -- cinza escuro xcode-dark
+      gray = "#3c3c3c",       -- cinza xcode-dark
+      lightgray = "#d4d4d4",  -- cinza claro xcode-dark
+      white = "#ffffff",      -- branco xcode-dark
+      red = "#d16969",        -- vermelho xcode-dark
+      orange = "#b89500",     -- laranja xcode-dark
+      yellow = "#d7ba7d",     -- amarelo xcode-dark
+      green = "#608b4e",      -- verde xcode-dark
+      cyan = "#4ec9b0",       -- ciano xcode-dark
+      blue = "#569cd6",       -- azul xcode-dark
+      purple = "#c586c0",     -- roxo xcode-dark
+      pink = "#d16d9e",       -- rosa xcode-dark
     }
 
     local my_lualine_theme = {
@@ -55,7 +55,6 @@ return {
       },
     }
 
-    -- configure lualine with modified theme
     lualine.setup({
       options = {
         theme = my_lualine_theme,
