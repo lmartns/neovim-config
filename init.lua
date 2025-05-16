@@ -7,11 +7,16 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
   severity_sort = true,
+  deduplicate = true,
 })
 
-vim.keymap.set("n", "<space>fb", function()
-  require("telescope").extensions.file_browser.file_browser()
-end)
+vim.o.termguicolors = true
 
-vim.keymap.set("n", "o", "o<Esc>", { noremap = true })
-vim.keymap.set("n", "O", "O<Esc>", { noremap = true })
+-- Adicione temporariamente este código ao seu init.lua para ver quais são as fontes dos diagnósticos
+vim.api.nvim_create_user_command("DiagnosticDetails", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local diagnostics = vim.diagnostic.get(bufnr)
+  for i, d in ipairs(diagnostics) do
+    print(i, d.source, d.code or "no_code", d.message)
+  end
+end, {})

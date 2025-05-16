@@ -8,10 +8,17 @@ return {
   },
   config = function()
     require("neodev").setup()
-    local lspconfig = require("lspconfig")
-    local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+      deduplicate = true,
+    })
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -60,60 +67,5 @@ return {
     })
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-
-    -- Lista dos servidores que você quer configurar
-    local servers = {
-      "ts_ls",
-      "html",
-      "cssls",
-      "tailwindcss",
-      "svelte",
-      "lua_ls",
-      "graphql",
-      "emmet_ls",
-      "prismals",
-    }
-
-    -- Configura mason-lspconfig para garantir instalação
-    mason_lspconfig.setup({
-      ensure_installed = servers,
-    })
-
-    -- Configura cada servidor individualmente
-    for _, server in ipairs(servers) do
-      local opts = {
-        capabilities = capabilities,
-      }
-
-      if server == "graphql" then
-        opts.filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" }
-      elseif server == "emmet_ls" then
-        opts.filetypes = {
-          "html",
-          "typescriptreact",
-          "javascriptreact",
-          "css",
-          "sass",
-          "scss",
-          "less",
-          "svelte",
-        }
-      elseif server == "lua_ls" then
-        opts.settings = {
-          Lua = {
-            diagnostics = { globals = { "vim" } },
-            completion = { callSnippet = "Replace" },
-          },
-        }
-      end
-
-      lspconfig[server].setup(opts)
-    end
   end,
 }
