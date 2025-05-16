@@ -12,3 +12,6 @@ vim.diagnostic.config({
 vim.keymap.set("n", "<space>fb", function()
   require("telescope").extensions.file_browser.file_browser()
 end)
+
+vim.keymap.set("n", "o", "o<Esc>", { noremap = true })
+vim.keymap.set("n", "O", "O<Esc>", { noremap = true })

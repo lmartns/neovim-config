@@ -5,49 +5,49 @@ return {
     local workspaces = require("workspaces")
 
     workspaces.setup({
-      -- Caminho para salvar os dados dos workspaces (padrão)
+      -- Path to save workspace data (default)
       path = vim.fn.stdpath("data") .. "/workspaces",
 
-      -- Tipo de mudança de diretório: "global", "local" ou "tab"
+      -- Type of directory change: "global", "local", or "tab"
       cd_type = "global",
 
-      -- Ordenar workspaces por uso recente
+      -- Sort workspaces by recent use
       sort = true,
       mru_sort = true,
 
-      -- Hooks para rodar após abrir workspace
+      -- Hooks to run after opening a workspace
       hooks = {
         open = {
-          "Telescope find_files", -- abre o finder de arquivos
-          "Telescope live_grep", -- abre busca por texto
+          "Telescope find_files", -- open file finder
+          "Telescope live_grep", -- open text search
         },
       },
 
-      -- Notificações ao adicionar/remover workspace
+      -- Notifications when adding/removing workspace
       notify_info = true,
     })
 
-    -- Keymaps para gerenciar workspaces
-    vim.keymap.set("n", "<leader>wo", workspaces.open, { desc = "Abrir workspace" })
+    -- Keymaps to manage workspaces
+    vim.keymap.set("n", "<leader>wo", workspaces.open, { desc = "Open workspace" })
     vim.keymap.set("n", "<leader>wa", function()
-      -- Adiciona workspace com nome e caminho atuais
-      local name = vim.fn.input("Nome do workspace: ")
-      local path = vim.fn.input("Caminho do workspace: ", vim.fn.getcwd(), "dir")
+      -- Add workspace with current name and path
+      local name = vim.fn.input("Workspace name: ")
+      local path = vim.fn.input("Workspace path: ", vim.fn.getcwd(), "dir")
       if name ~= "" and path ~= "" then
         workspaces.add(path, name)
-        print("Workspace '" .. name .. "' adicionado.")
+        print("Workspace '" .. name .. "' added.")
       else
-        print("Nome ou caminho inválido.")
+        print("Invalid name or path.")
       end
-    end, { desc = "Adicionar workspace" })
+    end, { desc = "Add workspace" })
     vim.keymap.set("n", "<leader>wr", function()
-      local name = vim.fn.input("Nome do workspace para remover: ")
+      local name = vim.fn.input("Workspace name to remove: ")
       if name ~= "" then
         workspaces.remove(name)
-        print("Workspace '" .. name .. "' removido.")
+        print("Workspace '" .. name .. "' removed.")
       else
-        print("Nome inválido.")
+        print("Invalid name.")
       end
-    end, { desc = "Remover workspace" })
+    end, { desc = "Remove workspace" })
   end,
 }

@@ -42,3 +42,12 @@ keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { desc = "O
 keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Open horizontal terminal" })
 
 keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Open vertical terminal" })
+
+keymap.set("n", "<space>fb", function()
+  require("telescope").extensions.file_browser.file_browser()
+end)
+
+keymap.set("n", "o", "o<Esc>", { noremap = true })
+keymap.set("n", "O", "O<Esc>", { noremap = true })
+
+vim.keymap.set("n", "<Tab>", "i<Tab><Esc>l", { noremap = true })

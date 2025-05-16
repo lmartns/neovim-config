@@ -15,5 +15,11 @@ return {
     vim.keymap.set("n", "<leader>3", function()
       ui.nav_file(3)
     end, { desc = "Go to Harpoon file 3" })
+    vim.keymap.set("n", "<leader>r", function()
+      local mark = require("harpoon.mark")
+      local filepath = vim.fn.expand("%:p")
+      mark.rm_file(filepath)
+      print("Arquivo removido do Harpoon: " .. filepath)
+    end, { desc = "Remover arquivo do Harpoon" })
   end,
 }
