@@ -1,10 +1,9 @@
 return {
   {
-    "arzg/vim-colors-xcode",
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.o.background = "dark"
-      vim.cmd.colorscheme("xcode")
+      vim.cmd.colorscheme("gruvbox")
     end,
   },
 }

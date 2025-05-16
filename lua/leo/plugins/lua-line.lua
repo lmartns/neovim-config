@@ -6,30 +6,30 @@ return {
     local lazy_status = require("lazy.status")
 
     local colors = {
-      background = "#1e1e1e", -- fundo xcode-dark
-      black = "#232526",      -- preto xcode-dark
-      darkgray = "#2c2c2c",   -- cinza escuro xcode-dark
-      gray = "#3c3c3c",       -- cinza xcode-dark
-      lightgray = "#d4d4d4",  -- cinza claro xcode-dark
-      white = "#ffffff",      -- branco xcode-dark
-      red = "#d16969",        -- vermelho xcode-dark
-      orange = "#b89500",     -- laranja xcode-dark
-      yellow = "#d7ba7d",     -- amarelo xcode-dark
-      green = "#608b4e",      -- verde xcode-dark
-      cyan = "#4ec9b0",       -- ciano xcode-dark
-      blue = "#569cd6",       -- azul xcode-dark
-      purple = "#c586c0",     -- roxo xcode-dark
-      pink = "#d16d9e",       -- rosa xcode-dark
+      background = "#282828", -- fundo Gruvbox dark
+      black = "#1d2021",
+      darkgray = "#3c3836",
+      gray = "#504945",
+      lightgray = "#bdae93",
+      white = "#ebdbb2",
+      red = "#fb4934",
+      orange = "#fe8019",
+      yellow = "#fabd2f",
+      green = "#b8bb26",
+      cyan = "#8ec07c",
+      blue = "#83a598",
+      purple = "#d3869b",
+      pink = "#d3869b",
     }
 
     local my_lualine_theme = {
       normal = {
-        a = { bg = colors.blue, fg = colors.background, gui = "bold" },
+        a = { bg = colors.green, fg = colors.background, gui = "bold" },
         b = { bg = colors.darkgray, fg = colors.white },
         c = { bg = colors.black, fg = colors.lightgray },
       },
       insert = {
-        a = { bg = colors.green, fg = colors.background, gui = "bold" },
+        a = { bg = colors.blue, fg = colors.background, gui = "bold" },
         b = { bg = colors.darkgray, fg = colors.white },
         c = { bg = colors.black, fg = colors.lightgray },
       },
