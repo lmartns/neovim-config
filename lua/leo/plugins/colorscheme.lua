@@ -1,7 +1,7 @@
 return {
-  "datsfilipe/vesper.nvim",
+  "catppuccin/nvim",
   priority = 1000,
   config = function()
-    vim.cmd("colorscheme vesper")
+    vim.cmd("colorscheme catppuccin")
   end,
 }

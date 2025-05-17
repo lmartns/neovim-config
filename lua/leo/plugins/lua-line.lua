@@ -6,52 +6,52 @@ return {
     local lazy_status = require("lazy.status")
 
     local colors = {
-      background = "#101010", -- editor.background
-      black = "#101010", -- sidebar, tab inactive
-      darkgray = "#232323", -- list.inactiveSelectionBackground
-      gray = "#505050", -- editorLineNumber.foreground
-      lightgray = "#A0A0A0", -- sideBarTitle.foreground
-      white = "#FFFFFF", -- editor.foreground
-      red = "#FF8080", -- editorError.foreground
-      orange = "#FFC799", -- editorWarning.foreground
-      yellow = "#FFC799", -- activityBarBadge.background (usado para destaque)
-      green = "#99FFE4", -- editorGutter.addedBackground
-      cyan = "#99FFE4", -- editorGutter.addedBackground (mesma cor)
-      blue = "#A0A0A0", -- editorInlayHint.foreground (cinza claro)
-      purple = "#FFC799", -- destaque suave (usado no visual)
-      pink = "#FF8080", -- erro / destaque vermelho suave
+      base = "#1e1e2e",
+      mantle = "#181825",
+      crust = "#11111b",
+      text = "#cdd6f4",
+      subtext = "#bac2de",
+      red = "#f38ba8",
+      orange = "#fab387",
+      yellow = "#f9e2af",
+      green = "#a6e3a1",
+      blue = "#89b4fa",
+      purple = "#cba6f7",
+      pink = "#f5c2e7",
+      surface0 = "#313244",
+      surface1 = "#45475a",
     }
 
     local my_lualine_theme = {
       normal = {
-        a = { bg = colors.orange, fg = colors.black, gui = "bold" },
-        b = { bg = colors.darkgray, fg = colors.white },
-        c = { bg = colors.black, fg = colors.lightgray },
+        a = { bg = colors.blue, fg = colors.base, gui = "bold" },
+        b = { bg = colors.surface0, fg = colors.text },
+        c = { bg = colors.mantle, fg = colors.subtext },
       },
       insert = {
-        a = { bg = colors.green, fg = colors.black, gui = "bold" },
-        b = { bg = colors.darkgray, fg = colors.white },
-        c = { bg = colors.black, fg = colors.lightgray },
+        a = { bg = colors.green, fg = colors.base, gui = "bold" },
+        b = { bg = colors.surface0, fg = colors.text },
+        c = { bg = colors.mantle, fg = colors.subtext },
       },
       visual = {
-        a = { bg = colors.purple, fg = colors.black, gui = "bold" },
-        b = { bg = colors.darkgray, fg = colors.white },
-        c = { bg = colors.black, fg = colors.lightgray },
+        a = { bg = colors.purple, fg = colors.base, gui = "bold" },
+        b = { bg = colors.surface0, fg = colors.text },
+        c = { bg = colors.mantle, fg = colors.subtext },
       },
       command = {
-        a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-        b = { bg = colors.darkgray, fg = colors.white },
-        c = { bg = colors.black, fg = colors.lightgray },
+        a = { bg = colors.yellow, fg = colors.base, gui = "bold" },
+        b = { bg = colors.surface0, fg = colors.text },
+        c = { bg = colors.mantle, fg = colors.subtext },
       },
       replace = {
-        a = { bg = colors.red, fg = colors.black, gui = "bold" },
-        b = { bg = colors.darkgray, fg = colors.white },
-        c = { bg = colors.black, fg = colors.lightgray },
+        a = { bg = colors.red, fg = colors.base, gui = "bold" },
+        b = { bg = colors.surface0, fg = colors.text },
+        c = { bg = colors.mantle, fg = colors.subtext },
       },
       inactive = {
-        a = { bg = colors.black, fg = colors.gray, gui = "bold" },
-        b = { bg = colors.black, fg = colors.gray },
-        c = { bg = colors.black, fg = colors.gray },
+        a = { bg = colors.mantle, fg = colors.surface1, gui = "bold" },
+        b = { bg = colors.mantle, fg = colors.surface1 },
+        c = { bg = colors.mantle, fg = colors.surface1 },
       },
     }
 

@@ -20,3 +20,9 @@ vim.api.nvim_create_user_command("DiagnosticDetails", function()
     print(i, d.source, d.code or "no_code", d.message)
   end
 end, {})
+
+vim.cmd([[
+  highlight Normal gui=bold cterm=bold
+  highlight Comment gui=italic cterm=italic
+  highlight Function gui=bold cterm=bold
+]])
