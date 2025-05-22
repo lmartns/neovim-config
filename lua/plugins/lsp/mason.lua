@@ -29,6 +29,8 @@ return {
       "graphql",
       "emmet_ls",
       "prismals",
+      "clangd",
+      "sqlls"
     }
 
     mason_lspconfig.setup({

@@ -44,3 +44,6 @@ keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc
 keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Open vertical terminal" })
 
 vim.keymap.set("n", "<Tab>", "i<Tab><Esc>l", { noremap = true })
+
+keymap.set({ "n", "v" }, "y", '"+y', { noremap = true })
+keymap.set("n", "yy", '"+yy', { noremap = true })
