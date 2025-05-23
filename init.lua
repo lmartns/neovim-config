@@ -1,5 +1,5 @@
-require("leo.core")
-require("leo.lazy")
+require("core")
+require("lazy-setup")
 
 vim.diagnostic.config({
   virtual_text = true, -- Desativa texto virtual no final da linha
