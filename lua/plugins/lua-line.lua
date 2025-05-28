@@ -6,20 +6,20 @@ return {
     local lazy_status = require("lazy.status")
 
     local colors = {
-      base = "#1e1e2e",
-      mantle = "#181825",
-      crust = "#11111b",
-      text = "#cdd6f4",
-      subtext = "#bac2de",
-      red = "#f38ba8",
-      orange = "#fab387",
-      yellow = "#f9e2af",
-      green = "#a6e3a1",
-      blue = "#89b4fa",
-      purple = "#cba6f7",
-      pink = "#f5c2e7",
-      surface0 = "#313244",
-      surface1 = "#45475a",
+      base = "#1d2021",     -- Gruvbox Material dark0_hard (for fg on colored bg)
+      mantle = "#282828",   -- Gruvbox Material dark0 (main bg)
+      crust = "#1d2021",    -- Gruvbox Material dark0_hard
+      text = "#ddc7a1",     -- Gruvbox Material fg
+      subtext = "#bdae93",  -- Gruvbox Material fg_grey
+      red = "#ea6962",      -- Gruvbox Material red
+      orange = "#e78a4e",   -- Gruvbox Material orange
+      yellow = "#d8a657",   -- Gruvbox Material yellow
+      green = "#a9b665",    -- Gruvbox Material green
+      blue = "#7daea3",     -- Gruvbox Material blue
+      purple = "#d3869b",   -- Gruvbox Material purple/magenta
+      pink = "#d3869b",     -- Gruvbox Material purple/magenta (no distinct pink, using purple)
+      surface0 = "#32302f", -- Gruvbox Material dark1 (component bg)
+      surface1 = "#928374", -- Gruvbox Material gray_fg (inactive fg)
     }
 
     local my_lualine_theme = {
