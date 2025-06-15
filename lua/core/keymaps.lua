@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
@@ -44,3 +45,7 @@ vim.keymap.set("n", "<Tab>", "i<Tab><Esc>l", { noremap = true })
 
 keymap.set({ "n", "v" }, "y", '"+y', { noremap = true })
 keymap.set("n", "yy", '"+yy', { noremap = true })
+
+keymap.set("v", "<leader>cf", "<Plug>(Copilot-code-actions)", { desc = "Copilot - Fix/Ações de Código" })
+
+keymap.set("n", "<leader>cc", ":CopilotChat ", { desc = "Copilot - Abrir Chat" })
