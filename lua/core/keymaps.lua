@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
@@ -46,6 +46,11 @@ vim.keymap.set("n", "<Tab>", "i<Tab><Esc>l", { noremap = true })
 keymap.set({ "n", "v" }, "y", '"+y', { noremap = true })
 keymap.set("n", "yy", '"+yy', { noremap = true })
 
-keymap.set("v", "<leader>cf", "<Plug>(Copilot-code-actions)", { desc = "Copilot - Fix/Ações de Código" })
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
-keymap.set("n", "<leader>cc", ":CopilotChat ", { desc = "Copilot - Abrir Chat" })
+keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
+keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
