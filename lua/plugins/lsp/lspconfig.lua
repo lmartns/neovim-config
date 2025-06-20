@@ -20,7 +20,11 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(event)
-        local keymap = vim.keymap -- para concisão
+        local keymap = vim.keymap
+
+        if vim.lsp.inlay_hint then
+          vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+        end
 
         keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = event.buf })
         keymap.set(
