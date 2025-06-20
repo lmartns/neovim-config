@@ -47,9 +47,6 @@ return {
         section_separators = { left = "", right = "" },
       },
       sections = {
-        lualine_c = {
-          "diagnostics",
-        },
         lualine_x = {
           {
             lazy_status.updates,

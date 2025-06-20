@@ -52,5 +52,30 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find str
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
-keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
-keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
+keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
+keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" })
+
+local function toggle_checklist()
+  local line = vim.api.nvim_get_current_line()
+  local modified = false
+
+  local new_line, count1 = line:gsub("%- %[ %]", "- [x]", 1)
+  if count1 > 0 then
+    modified = true
+  end
+
+  if not modified then
+    new_line, count2 = line:gsub("%- %[x%]", "- [ ]", 1)
+    if count2 > 0 then
+      modified = true
+    end
+  end
+
+  if modified then
+    vim.api.nvim_set_current_line(new_line)
+  end
+end
+
+keymap.set("n", "<leader>cx", toggle_checklist, { desc = "Alternar checklist do Markdown" })
+
+keymap.set("n", "<leader>fn", "<cmd>enew<CR>", { desc = "Novo arquivo (em branco)" })
